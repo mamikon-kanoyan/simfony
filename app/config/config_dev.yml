@@ -39,3 +39,23 @@ monolog:
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
+swagger:
+    version: '2.0'
+    info:
+        title: 'My API'
+        version: '1.0.0'
+        description: 'My API Description'
+    host: 'my-api-host:8080'
+    base_path: '/v2'
+    schemes:
+        - https
+    alternative_hosts:
+        - { name: 'production', host: 'productionhost', schemes: [https], base_path: '/api' }
+    produces:
+        - application/json
+    consumes:
+        - application/json
+    annotations:
+        bundles:
+            - AcmeDemoBundle
+    pretty_json: true
